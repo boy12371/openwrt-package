@@ -1,6 +1,6 @@
 m = Map("service_weburl")
 m.title = translate("WebURL Service")
-m.description = translate("<a href=\"https://github.com/messense/service_weburl\" target=\"_blank\">Project GitHub URL</a>")
+m.description = ""
 
 m:section(SimpleSection).template = "service_weburl/status"
 
