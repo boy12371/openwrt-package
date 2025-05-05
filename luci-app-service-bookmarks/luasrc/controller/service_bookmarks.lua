@@ -9,7 +9,7 @@ function index()
 	page.acl_depends = { "luci-app-service-bookmarks" }
 
 	entry({ "admin", "services", "service_bookmarks", "home" }, cbi("service_bookmarks/home"), _("Home"), 10).leaf = true
-	entry({ "admin", "services", "service_bookmarks", "client" }, cbi("service_bookmarks/client"), _("Settings"), 20).leaf = true -- 客户端配置
+	entry({ "admin", "services", "service_bookmarks", "settings" }, cbi("service_bookmarks/settings"), _("Settings"), 20).leaf = true -- 设置配置
 	entry({ "admin", "services", "service_bookmarks", "log" }, form("service_bookmarks/log"), _("Log"), 30).leaf = true -- 日志页面
 
 	-- 服务管理API
@@ -17,16 +17,7 @@ function index()
 	entry({"admin", "services", "service_bookmarks", "services"}, call("action_add_service")).leaf = true
 	entry({"admin", "services", "service_bookmarks", "services", ":id"}, call("action_update_service")).leaf = true
 	entry({"admin", "services", "service_bookmarks", "services", ":id"}, call("action_delete_service")).leaf = true
-	entry({ "admin", "services", "service_bookmarks", "status" }, call("action_status")).leaf = true -- 运行状态
 	entry({ "admin", "services", "service_bookmarks", "logtail" }, call("action_logtail")).leaf = true -- 日志采集
-end
-
-function action_status()
-	local e = {}
-	e.running = luci.sys.call("pidof service_bookmarks >/dev/null") == 0
-	e.application = luci.sys.exec("service_bookmarks --version")
-	luci.http.prepare_content("application/json")
-	luci.http.write_json(e)
 end
 
 function action_logtail()

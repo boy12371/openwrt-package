@@ -19,15 +19,6 @@ msgstr "监听主机"
 msgid "Port"
 msgstr "监听端口"
 
-msgid "Collecting data..."
-msgstr "获取数据中..."
-
-msgid "RUNNING"
-msgstr "运行中"
-
-msgid "NOT RUNNING"
-msgstr "未运行"
-
 msgid "Home"
 msgstr "首页"
 
