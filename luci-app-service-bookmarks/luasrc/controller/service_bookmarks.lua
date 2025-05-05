@@ -17,10 +17,8 @@ function index()
 	entry({"admin", "services", "service_bookmarks", "services"}, call("action_add_service")).leaf = true
 	entry({"admin", "services", "service_bookmarks", "services", ":id"}, call("action_update_service")).leaf = true
 	entry({"admin", "services", "service_bookmarks", "services", ":id"}, call("action_delete_service")).leaf = true
-
 	entry({ "admin", "services", "service_bookmarks", "status" }, call("action_status")).leaf = true -- 运行状态
 	entry({ "admin", "services", "service_bookmarks", "logtail" }, call("action_logtail")).leaf = true -- 日志采集
-	entry({ "admin", "services", "service_bookmarks", "invalidate-cache" }, call("action_invalidate_cache")).leaf = true -- 清除缓存
 end
 
 function action_status()
@@ -41,13 +39,6 @@ function action_logtail()
 	else
 		e.log = ""
 	end
-	luci.http.prepare_content("application/json")
-	luci.http.write_json(e)
-end
-
-function action_invalidate_cache()
-	local e = {}
-	e.ok = luci.sys.call("kill -HUP `pidof service_bookmarks`") == 0
 	luci.http.prepare_content("application/json")
 	luci.http.write_json(e)
 end

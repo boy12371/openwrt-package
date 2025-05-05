@@ -22,9 +22,6 @@ msgstr "监听端口"
 msgid "Collecting data..."
 msgstr "获取数据中..."
 
-msgid "Invalidate cache"
-msgstr "清除缓存"
-
 msgid "RUNNING"
 msgstr "运行中"
 
