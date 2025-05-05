@@ -22,12 +22,12 @@
     </div>
 </div>
 
-<% include("service_weburl/service_dialog") %>
+<% include("service_bookmarks/service_dialog") %>
 
 <script type="text/javascript">
     // Load services
     function loadServices() {
-        XHR.get('<%=url("admin/services/service_weburl/services")%>', null,
+        XHR.get('<%=url("admin/services/service_bookmarks/services")%>', null,
             function(x, data) {
                 var table = document.getElementById('services_table');
                 // Clear existing rows except header
@@ -130,10 +130,10 @@
 
         var endpoint, method;
         if (currentServiceId) {
-            endpoint = '<%=url("admin/services/service_weburl/services")%>/' + encodeURIComponent(currentServiceId);
+            endpoint = '<%=url("admin/services/service_bookmarks/services")%>/' + encodeURIComponent(currentServiceId);
             method = 'PUT';
         } else {
-            endpoint = '<%=url("admin/services/service_weburl/services")%>';
+            endpoint = '<%=url("admin/services/service_bookmarks/services")%>';
             method = 'POST';
         }
 
@@ -151,7 +151,7 @@
 
     function deleteService(id) {
         if (confirm('<%:Are you sure you want to delete this service?%>')) {
-            XHR.poll(-1, '<%=url("admin/services/service_weburl/services")%>/' + encodeURIComponent(id), { method: 'DELETE' },
+            XHR.poll(-1, '<%=url("admin/services/service_bookmarks/services")%>/' + encodeURIComponent(id), { method: 'DELETE' },
                 function(x, data) {
                     if (data && data.success) {
                         loadServices();

@@ -1,2 +1,0 @@
-config service_weburl 'service_weburl'
-    option enabled '0'

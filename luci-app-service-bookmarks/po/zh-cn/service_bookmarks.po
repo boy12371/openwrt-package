@@ -1,11 +1,11 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
-msgid "WebURL"
-msgstr "WebURL"
+msgid "BookMarks"
+msgstr "书签"
 
-msgid "WebURL Service"
-msgstr "服务网址"
+msgid "BookMarks Service"
+msgstr "服务书签"
 
 msgid "Enable"
 msgstr "启用"
@@ -69,9 +69,6 @@ msgstr "日志"
 
 msgid "Debug Mode"
 msgstr "调试模式"
-
-msgid "<a href=\"https://github.com/messense/service_weburl\" target=\"_blank\">Project GitHub URL</a>"
-msgstr ""
 
 msgid "Double click the input box above to get refresh token by scanning qrcode"
 msgstr "鼠标双击上面的输入框扫码登录自动获取 refresh token"

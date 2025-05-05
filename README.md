@@ -1,1 +1,1 @@
-# openwrt-service-weburl
+# openwrt-package

@@ -1,8 +1,8 @@
-m = Map("service_weburl")
-m.title = translate("WebURL Service")
+m = Map("service_bookmarks")
+m.title = translate("BookMarks Service")
 m.description = ""
 
-m:section(SimpleSection).template = "service_weburl/status"
+m:section(SimpleSection).template = "service_bookmarks/status"
 
 e = m:section(TypedSection, "server")
 e.anonymous = true

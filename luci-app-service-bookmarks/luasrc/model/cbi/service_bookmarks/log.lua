@@ -4,6 +4,6 @@ log.reset = false
 
 t = log:field(DummyValue, '', '')
 t.rawhtml = true
-t.template = 'service_weburl/log'
+t.template = 'service_bookmarks/log'
 
 return log

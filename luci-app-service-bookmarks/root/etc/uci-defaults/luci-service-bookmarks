@@ -1,8 +1,8 @@
 #!/bin/sh
 
-[ -f "/etc/config/service_weburl" ] || {
-cat >/etc/config/service_weburl <<-EOF
-config service_weburl 'service_weburl'
+[ -f "/etc/config/service_bookmarks" ] || {
+cat >/etc/config/service_bookmarks <<-EOF
+config service_bookmarks 'service_bookmarks'
     option enabled '0'
 
 config service 'web_service'
@@ -17,9 +17,9 @@ config service 'admin_panel'
 EOF
 }
 uci -q batch <<-EOF >/dev/null
-	delete ucitrack.@service_weburl[-1]
-	add ucitrack service_weburl
-	set ucitrack.@service_weburl[-1].init=service_weburl
+	delete ucitrack.@service_bookmarks[-1]
+	add ucitrack service_bookmarks
+	set ucitrack.@service_bookmarks[-1].init=service_bookmarks
 	commit ucitrack
 EOF
 
