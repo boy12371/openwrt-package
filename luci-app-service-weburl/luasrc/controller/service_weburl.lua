@@ -8,7 +8,7 @@ function index()
 	page.dependent = true
 	page.acl_depends = { "luci-app-service-weburl" }
 
-	entry({ "admin", "services", "service_weburl", "home" }, cbi("service_weburl/home"), _("Settings"), 10).leaf = true
+	entry({ "admin", "services", "service_weburl", "home" }, cbi("service_weburl/home"), _("Home"), 10).leaf = true
 	entry({ "admin", "services", "service_weburl", "client" }, cbi("service_weburl/client"), _("Settings"), 20).leaf = true -- 客户端配置
 	entry({ "admin", "services", "service_weburl", "log" }, form("service_weburl/log"), _("Log"), 30).leaf = true -- 日志页面
 
