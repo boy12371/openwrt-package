@@ -10,8 +10,6 @@ e.anonymous = true
 enable = e:option(Flag, "enable", translate("Enable"))
 enable.rmempty = false
 
-refresh_token = e:option(Value, "refresh_token", translate("Refresh Token"))
-
 root = e:option(Value, "root", translate("Root Directory"))
 root.description = translate("Restrict access to a folder, defaults to / which means no restrictions")
 root.default = "/"
