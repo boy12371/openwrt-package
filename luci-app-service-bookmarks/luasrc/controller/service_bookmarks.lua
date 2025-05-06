@@ -9,7 +9,6 @@ function index()
 	page.acl_depends = { "luci-app-service-bookmarks" }
 
 	entry({ "admin", "services", "service_bookmarks", "home" }, cbi("service_bookmarks/home"), _("Home"), 10).leaf = true
-	entry({ "admin", "services", "service_bookmarks", "settings" }, cbi("service_bookmarks/settings"), _("Settings"), 20).leaf = true -- 设置配置
 	entry({ "admin", "services", "service_bookmarks", "log" }, form("service_bookmarks/log"), _("Log"), 30).leaf = true -- 日志页面
 
 	-- 服务管理API

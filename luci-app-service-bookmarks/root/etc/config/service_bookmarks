@@ -1,2 +1,1 @@
 config service_bookmarks 'service_bookmarks'
-    option enabled '0'

@@ -7,32 +7,11 @@ msgstr "书签"
 msgid "BookMarks Service"
 msgstr "服务书签"
 
-msgid "Enable"
-msgstr "启用"
-
-msgid "Root Directory"
-msgstr "根目录"
-
-msgid "Host"
-msgstr "监听主机"
-
-msgid "Port"
-msgstr "监听端口"
-
 msgid "Home"
 msgstr "首页"
 
-msgid "Settings"
-msgstr "设置"
-
 msgid "Log"
 msgstr "日志"
-
-msgid "Debug Mode"
-msgstr "调试模式"
-
-msgid "Restrict access to a folder, defaults to / which means no restrictions"
-msgstr "限制只能访问该目录，默认为 / 表示不限制，注意这个参数不是本地磁盘路径"
 
 # Home page translations
 msgid "Service List"

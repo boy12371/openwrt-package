@@ -3,7 +3,6 @@
 [ -f "/etc/config/service_bookmarks" ] || {
 cat >/etc/config/service_bookmarks <<-EOF
 config service_bookmarks 'service_bookmarks'
-    option enabled '0'
 
 config service 'web_service'
     option title 'Web Service'
