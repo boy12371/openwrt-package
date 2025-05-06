@@ -55,14 +55,24 @@
                         descCell.className = 'td';
                         descCell.textContent = service.description || '-';
 
-                        // URL cell with tooltip
+                        // URL cell with tooltip and truncation
                         var urlCell = row.insertCell(2);
                         urlCell.className = 'td';
-                        var urlSpan = document.createElement('span');
-                        urlSpan.className = 'url-text';
-                        urlSpan.textContent = service.url;
-                        urlSpan.title = service.url;
-                        urlCell.appendChild(urlSpan);
+                        var urlLink = document.createElement('a');
+                        urlLink.href = service.url;
+                        urlLink.target = '_blank';
+                        urlLink.rel = 'noopener noreferrer';
+                        urlLink.className = 'url-text';
+                        urlLink.title = service.url;
+                        
+                        // Truncate URL if too long
+                        var maxLength = 40;
+                        var displayUrl = service.url.length > maxLength ? 
+                            service.url.substring(0, maxLength) + '...' : 
+                            service.url;
+                        urlLink.textContent = displayUrl;
+                        
+                        urlCell.appendChild(urlLink);
 
                         // Actions cell
                         var actionCell = row.insertCell(3);
@@ -169,23 +179,36 @@
     }
 
     function deleteService(id) {
-        if (confirm('<%:Are you sure you want to delete this service?%>')) {
-            XHR.poll(-1, '<%=url("admin/services/service_bookmarks/services")%>/' + encodeURIComponent(id), { method: 'DELETE' },
-                function(x, data) {
-                    if (x.status === 200 && data && data.success) {
-                        ui.addNotification(null, E('p', _('Service deleted successfully')), 'info');
-                        loadServices();
-                    } else {
-                        var errorMsg = (data && data.error) ? data.error : 
-                                     (x.statusText ? x.statusText : '<%:Failed to delete service%>');
-                        ui.addNotification(null, E('p', _('Error: ') + errorMsg), 'error');
+        ui.showModal(_('Confirm Delete'), [
+            E('p', _('Are you sure you want to delete this service?')),
+            E('div', { 'class': 'right' }, [
+                E('button', {
+                    'class': 'btn',
+                    'click': ui.hideModal
+                }, _('Cancel')),
+                E('button', {
+                    'class': 'btn cbi-button-remove',
+                    'click': function() {
+                        ui.hideModal();
+                        XHR.poll(-1, '<%=url("admin/services/service_bookmarks/services")%>/' + encodeURIComponent(id), { method: 'DELETE' },
+                            function(x, data) {
+                                if (x.status === 200 && data && data.success) {
+                                    ui.addNotification(null, E('p', _('Service deleted successfully')), 'info');
+                                    loadServices();
+                                } else {
+                                    var errorMsg = (data && data.error) ? data.error : 
+                                                 (x.statusText ? x.statusText : '<%:Failed to delete service%>');
+                                    ui.addNotification(null, E('p', _('Error: ') + errorMsg), 'error');
+                                }
+                            },
+                            function(x) {
+                                ui.addNotification(null, E('p', _('Network error occurred')), 'error');
+                            }
+                        );
                     }
-                },
-                function(x) {
-                    ui.addNotification(null, E('p', _('Network error occurred')), 'error');
-                }
-            );
-        }
+                }, _('Confirm'))
+            ])
+        ]);
     }
 
     // Event listeners
