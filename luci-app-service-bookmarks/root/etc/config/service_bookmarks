@@ -1,1 +1,11 @@
 config service_bookmarks 'service_bookmarks'
+
+config service 'web_service'
+    option title 'Web Service'
+    option url 'http://example.com'
+    option description 'Main web service interface'
+
+config service 'admin_panel' 
+    option title 'Admin Panel'
+    option url 'http://admin.example.com'
+    option description 'Service administration interface'
