@@ -1,16 +1,15 @@
+# Copyright (C) 2016 Openwrt.org
+#
+# This is free software, licensed under the Apache License, Version 2.0 .
+#
+
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=luci-app-service-bookmarks
-PKG_VERSION:=2.2.1
-PKG_RELEASE:=1
-PKG_PO_VERSION:=$(PKG_VERSION)-$(PKG_RELEASE)
-
-PKG_LICENSE:=MIT
-PKG_MAINTAINER:=richard <richard@sveil.com>
-
-LUCI_TITLE:=LuCI Support for service-bookmarks
+LUCI_TITLE:=LuCI support for BookMarks
+LUCI_DEPENDS:=+iptables-mod-filter +kmod-ipt-filter
 LUCI_PKGARCH:=all
-LUCI_DEPENDS:=
+PKG_VERSION:=1.1
+PKG_RELEASE:=1
 
 include $(TOPDIR)/feeds/luci/luci.mk
 

@@ -1,24 +1,9 @@
 #!/bin/sh
 
-[ -f "/etc/config/service_bookmarks" ] || {
-cat >/etc/config/service_bookmarks <<-EOF
-config service_bookmarks 'service_bookmarks'
-
-config service 'web_service'
-    option title 'Web Service'
-    option url 'http://example.com'
-    option description 'Main web service interface'
-
-config service 'admin_panel' 
-    option title 'Admin Panel'
-    option url 'http://admin.example.com'
-    option description 'Service administration interface'
-EOF
-}
 uci -q batch <<-EOF >/dev/null
-	delete ucitrack.@service_bookmarks[-1]
-	add ucitrack service_bookmarks
-	set ucitrack.@service_bookmarks[-1].init=service_bookmarks
+	delete ucitrack.@bookmarks[-1]
+	add ucitrack bookmarks
+	set ucitrack.@bookmarks[-1].init=bookmarks
 	commit ucitrack
 EOF
 
