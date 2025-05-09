@@ -1,9 +1,9 @@
 #!/bin/sh
 
 uci -q batch <<-EOF >/dev/null
-	delete ucitrack.@bookmarks[-1]
-	add ucitrack bookmarks
-	set ucitrack.@bookmarks[-1].init=bookmarks
+	delete ucitrack.@service_bookmarks[-1]
+	add ucitrack service_bookmarks
+	set ucitrack.@service_bookmarks[-1].init=service_bookmarks
 	commit ucitrack
 EOF
 

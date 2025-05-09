@@ -4,7 +4,7 @@
 
 START=99
 
-CONFIG=bookmarks
+CONFIG=service_bookmarks
 ipt="iptables -w"
 ip6t="ip6tables -w"
 
