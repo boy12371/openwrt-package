@@ -1,13 +1,13 @@
 local o = require "luci.sys"
 
-a = Map("bookmarks", translate("URL Filter"), translate("Set keyword filtering here, can be any character in the URL, can filter such as video sites, QQ, thunder, Taobao..."))
-a.template = "bookmarks/index"
+a = Map("service_bookmarks", translate("URL Filter"), translate("Set keyword filtering here, can be any character in the URL, can filter such as video sites, QQ, thunder, Taobao..."))
+a.template = "service_bookmarks/index"
 
 t = a:section(TypedSection, "basic", translate("Running Status"))
 t.anonymous = true
 
 e = t:option(DummyValue, "bookmarks_status", translate("Running Status"))
-e.template = "bookmarks/bookmarks"
+e.template = "service_bookmarks/service_bookmarks"
 e.value = translate("Collecting data...")
 
 t = a:section(TypedSection, "basic", translate("Basic setting"), translate("In general, normal filtering works fine, but forced filtering uses more complex algorithms and leads to higher CPU usage."))

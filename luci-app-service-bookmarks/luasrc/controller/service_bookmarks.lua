@@ -1,11 +1,11 @@
-module("luci.controller.bookmarks", package.seeall)
+module("luci.controller.service_bookmarks", package.seeall)
 
 function index()
     if not nixio.fs.access("/etc/config/service_bookmarks") then return end
 
     entry({"admin", "services"}, firstchild(), "Control", 44).dependent = false
-    entry({"admin", "services", "bookmarks"}, cbi("bookmarks"), _("URL Filter"), 12).dependent = true
-    entry({"admin", "services", "bookmarks", "status"}, call("status")).leaf = true
+    entry({"admin", "services", "service_bookmarks"}, cbi("service_bookmarks"), _("URL Filter"), 12).dependent = true
+    entry({"admin", "services", "service_bookmarks", "status"}, call("status")).leaf = true
 end
 
 function status()

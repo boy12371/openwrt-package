@@ -5,7 +5,7 @@
 
 <% include("cbi/map") %>
 <script type="text/javascript">//<![CDATA[
-	XHR.poll(2, '<%=luci.dispatcher.build_url("admin", "services", "bookmarks", "status")%>', null,
+	XHR.poll(2, '<%=luci.dispatcher.build_url("admin", "services", "service_bookmarks", "status")%>', null,
 		function(x, result)
 		{
 			var status = document.getElementsByClassName('bookmarks_status')[0];
