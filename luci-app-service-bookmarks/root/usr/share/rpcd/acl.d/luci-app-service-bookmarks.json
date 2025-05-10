@@ -2,10 +2,10 @@
 	"luci-app-service-bookmarks": {
 		"description": "Grant UCI access for luci-app-service-bookmarks",
 		"read": {
-			"uci": [ "bookmarks" ]
+			"uci": [ "service_bookmarks" ]
 		},
 		"write": {
-			"uci": [ "bookmarks" ]
+			"uci": [ "service_bookmarks" ]
 		}
 	}
 }
