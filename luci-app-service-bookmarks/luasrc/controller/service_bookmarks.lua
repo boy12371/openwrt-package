@@ -4,8 +4,8 @@ function index()
     if not nixio.fs.access("/etc/config/service_bookmarks") then return end
 
 	local page = entry({ "admin", "services", "service_bookmarks" }, alias("admin", "services", "service_bookmarks", "index"), _("Service BookMarks"), 10) -- 首页
-	page.dependent = true
-	page.acl_depends = { "luci-app-service-bookmarks" }
+	page.dependent = false
+	-- page.acl_depends = { "luci-app-service-bookmarks" }
 
 	entry({ "admin", "services", "service_bookmarks", "home" }, cbi("service_bookmarks"), _("Home"), 20).leaf = true
 	entry({ "admin", "services", "service_bookmarks", "log" }, form("service_bookmarks/log"), _("Log"), 30).leaf = true -- 日志页面
