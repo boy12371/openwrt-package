@@ -1,5 +1,14 @@
-msgid "Control"
-msgstr "管控"
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "BookMarks Service"
+msgstr "服务书签"
+
+msgid "Home"
+msgstr "首页"
+
+msgid "Log"
+msgstr "日志"
 
 msgid "Running Status"
 msgstr "运行状态"
