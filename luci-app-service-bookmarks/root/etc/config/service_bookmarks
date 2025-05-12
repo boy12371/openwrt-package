@@ -1,22 +1,10 @@
 
-config basic
-	option enable '0'
-	option algos '0'
+config service
+    option title 'Web Service'
+    option url 'http://example.com'
+    option description 'Main web service interface'
 
-config macbind
-	option keyword 'qq.com'
-	option enable '0'
-	option macaddr '00:0C:29:C8:99:9E'
-
-config macbind
-	option keyword 'taobao.com'
-	option enable '0'
-
-config macbind
-	option enable '0'
-	option keyword 'youku.com'
-
-config macbind
-	option enable '0'
-	option keyword 'www'
-
+config service
+    option title 'Admin Panel'
+    option url 'http://admin.example.com'
+    option description 'Service administration interface'

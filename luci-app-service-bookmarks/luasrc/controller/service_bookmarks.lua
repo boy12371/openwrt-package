@@ -10,13 +10,13 @@ function index()
 	entry({ "admin", "services", "service_bookmarks", "home" }, cbi("service_bookmarks"), _("Home"), 20).leaf = true
 	entry({ "admin", "services", "service_bookmarks", "log" }, form("log"), _("Log"), 30).leaf = true -- 日志页面
 
-	-- -- 服务管理API
+	-- 服务管理API
 	-- entry({"admin", "services", "service_bookmarks", "services"}, call("action_list_services")).leaf = true
 	-- entry({"admin", "services", "service_bookmarks", "services"}, call("action_add_service")).leaf = true
 	-- entry({"admin", "services", "service_bookmarks", "services", ":id"}, call("action_update_service")).leaf = true
 	-- entry({"admin", "services", "service_bookmarks", "services", ":id"}, call("action_delete_service")).leaf = true
 	entry({ "admin", "services", "service_bookmarks", "logtail" }, call("action_logtail")).leaf = true -- 日志采集
-    entry({ "admin", "services", "service_bookmarks", "status" }, call("status")).leaf = true -- 服务状态API
+    entry({ "admin", "services", "service_bookmarks", "status" }, call("status")).leaf = true -- 服务状态
 end
 
 function status()
