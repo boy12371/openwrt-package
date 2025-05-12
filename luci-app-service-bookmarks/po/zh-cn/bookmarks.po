@@ -16,9 +16,6 @@ msgstr "在此设置服务书签，可包含服务中的任意字符，例如标
 msgid "Service Settings"
 msgstr "服务设置"
 
-msgid "MAC addresses do not filter out all clients. For example, only specified clients are filtered out. Filtering time is optional."
-msgstr "MAC不设置为全客户端过滤，如设置只过滤指定的客户端。过滤时间可不设置。"
-
 msgid "Service Title"
 msgstr "服务标题"
 
