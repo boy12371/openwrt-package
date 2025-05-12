@@ -19,9 +19,6 @@ msgstr "服务设置"
 msgid "MAC addresses do not filter out all clients. For example, only specified clients are filtered out. Filtering time is optional."
 msgstr "MAC不设置为全客户端过滤，如设置只过滤指定的客户端。过滤时间可不设置。"
 
-msgid "Collecting data..."
-msgstr "正在收集数据..."
-
 msgid "Service Title"
 msgstr "服务标题"
 
