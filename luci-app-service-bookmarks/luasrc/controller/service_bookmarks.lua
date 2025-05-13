@@ -7,8 +7,8 @@ function index()
 	page.dependent = false
 	page.acl_depends = { "luci-app-service-bookmarks" }
 
-	entry({ "admin", "services", "service_bookmarks", "home" }, cbi("service_bookmarks"), _("Home"), 20).leaf = true
-	entry({ "admin", "services", "service_bookmarks", "log" }, form("log"), _("Log"), 30).leaf = true -- 日志页面
+	entry({ "admin", "services", "service_bookmarks", "home" }, cbi("home"), _("Home"), 20).leaf = true
+	entry({ "admin", "services", "service_bookmarks", "settings" }, cbi("settings"), _("Settings"), 30).leaf = true
 
 	-- 服务管理API
 	-- entry({"admin", "services", "service_bookmarks", "services"}, call("action_list_services")).leaf = true
