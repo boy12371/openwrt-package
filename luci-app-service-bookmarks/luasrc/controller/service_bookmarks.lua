@@ -3,7 +3,7 @@ module("luci.controller.service_bookmarks", package.seeall)
 function index()
     if not nixio.fs.access("/etc/config/service_bookmarks") then return end
 
-	local page = entry({ "admin", "services", "service_bookmarks" }, cbi("service_bookmarks"), _("Service BookMarks"), 10) -- 首页
+	local page = entry({ "admin", "services", "service_bookmarks" }, cbi("home"), _("Service BookMarks"), 10) -- 首页
 	page.dependent = false
 	page.acl_depends = { "luci-app-service-bookmarks" }
 
