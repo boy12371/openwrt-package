@@ -1,5 +1,3 @@
-local o = require "luci.sys"
-
 a = Map("service_bookmarks", translate("Service Bookmarks"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
 a.template = "service_bookmarks/settings"
 
