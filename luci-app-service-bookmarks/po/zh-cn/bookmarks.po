@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=UTF-8\n"
 
-msgid "Service BookMarks"
+msgid "Service Bookmarks"
 msgstr "服务书签"
 
 msgid "Home"
