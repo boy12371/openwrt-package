@@ -9,14 +9,17 @@ t.addremove = false
 
 e = t:option(DummyValue, "title", translate("Service Title"))
 e.default = ""
-e.rawhtml = true
+e.rawhtml = false
 
 e = t:option(DummyValue, "url", translate("Url Address"))
-e.default = ""
-e.rawhtml = true
+e.rawhtml = false
+function e.cfgvalue(self, section)
+    local url = self.map:get(section, "url") or ""
+    return string.format('<a href="%s" target="_blank">%s</a>', url, url)
+end
 
 e = t:option(DummyValue, "description", translate("Description"))
 e.default = ""
-e.rawhtml = true
+e.rawhtml = false
 
 return a
