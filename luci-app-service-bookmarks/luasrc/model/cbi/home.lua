@@ -7,13 +7,16 @@ t.template = "cbi/tblsection"
 t.anonymous = true
 t.addremove = false
 
-e = t:option(Value, "title", translate("Service Title"))
-e.rmempty = true
+e = t:option(DummyValue, "title", translate("Service Title"))
+e.default = ""
+e.rawhtml = true
 
-e = t:option(Value, "url", translate("Url Address"))
-e.rmempty = true
+e = t:option(DummyValue, "url", translate("Url Address"))
+e.default = ""
+e.rawhtml = true
 
-e = t:option(Value, "description", translate("Description"))
-e.rmempty = false
+e = t:option(DummyValue, "description", translate("Description"))
+e.default = ""
+e.rawhtml = true
 
 return a
