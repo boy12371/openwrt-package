@@ -1,5 +1,5 @@
 a = Map("service_bookmarks", translate("Service Bookmarks"), translate("List all available service bookmarks here"))
-a.template = "service_bookmarks"
+a.template = "service_bookmarks/index"
 a.pageaction = false
 
 -- 创建选项卡容器
