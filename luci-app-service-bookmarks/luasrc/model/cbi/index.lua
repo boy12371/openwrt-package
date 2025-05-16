@@ -3,27 +3,18 @@ a.template = "service_bookmarks/index"
 a.pageaction = false
 
 -- 创建选项卡容器
-tabs = a:section(TypedSection, nil, "", "")
-tabs.template = "cbi/tabmenu"
+tabs = a:section(NamedSection, "service", "bookmarks")
 tabs.anonymous = true
-tabs.tabs = {
-    { id = "home", header = translate("Home") },  -- 首页选项卡
-    { id = "settings", header = translate("Settings") }  -- 设置选项卡
-}
+tabs.addremove = false
+tabs:tab("home", translate("Home"))
+tabs:tab("settings", translate("Settings"))
 
 -- 首页选项卡内容
-home_tab = a:section(TypedSection, "service", translate("Service Bookmarks"), translate("List all available service bookmarks here"))
-home_tab.tab = "home"
-home_tab.template = "cbi/tblsection"
-home_tab.anonymous = true
-home_tab.addremove = false
--- home_tab:depends("__tab__", "home")  -- 绑定到首页选项卡
-
-eh = home_tab:option(DummyValue, "title", translate("Service Title"))
+eh = tabs:option("home", DummyValue, "title", translate("Service Title"))
 eh.width = "15%"
 eh.rawhtml = false
 
-eh = home_tab:option(DummyValue, "url", translate("Url Address"))
+eh = tabs:option("home", DummyValue, "url", translate("Url Address"))
 eh.width = "30%"
 eh.rawhtml = true
 function eh.cfgvalue(self, section)
@@ -31,26 +22,20 @@ function eh.cfgvalue(self, section)
     return string.format('<a href="%s" target="_blank">%s</a>', url, url)
 end
 
-eh = home_tab:option(DummyValue, "description", translate("Description"))
+eh = tabs:option("home", DummyValue, "description", translate("Description"))
 eh.width = "45%"
 eh.rawhtml = false
 
 -- 设置选项卡内容
-settings_tab = a:section(TypedSection, "service", translate("Service Settings"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
-settings_tab.tab = "settings"
-settings_tab.template = "cbi/tblsection"
-settings_tab.anonymous = true
-settings_tab.addremove = true
-
-es = settings_tab:option(Value, "title", translate("Service Title"))
+es = tabs:option("settings", Value, "title", translate("Service Title"))
 es.width = "15%"
 es.rmempty = true
 
-es = settings_tab:option(Value, "url", translate("Url Address"))
+es = tabs:option("settings", Value, "url", translate("Url Address"))
 es.width = "30%"
 es.rmempty = true
 
-es = settings_tab:option(Value, "description", translate("Description"))
+es = tabs:option("settings", Value, "description", translate("Description"))
 es.width = "45%"
 es.rmempty = false
 
