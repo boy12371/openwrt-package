@@ -12,10 +12,11 @@ tabs.tabs = {
 
 -- 首页选项卡内容
 home_tab = a:section(TypedSection, "service", translate("Service Bookmarks"), translate("List all available service bookmarks here"))
+home_tab.tab = "home"
 home_tab.template = "cbi/tblsection"
 home_tab.anonymous = true
 home_tab.addremove = false
-home_tab:depends("__tab__", "home")  -- 绑定到首页选项卡
+-- home_tab:depends("__tab__", "home")  -- 绑定到首页选项卡
 
 eh = home_tab:option(DummyValue, "title", translate("Service Title"))
 eh.width = "15%"
@@ -35,10 +36,10 @@ eh.rawhtml = false
 
 -- 设置选项卡内容
 settings_tab = a:section(TypedSection, "service", translate("Service Settings"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
+settings_tab.tab = "settings"
 settings_tab.template = "cbi/tblsection"
 settings_tab.anonymous = true
 settings_tab.addremove = true
-settings_tab:depends("__tab__", "settings")  -- 绑定到设置选项卡
 
 es = settings_tab:option(Value, "title", translate("Service Title"))
 es.width = "15%"
