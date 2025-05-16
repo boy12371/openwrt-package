@@ -3,8 +3,9 @@ a.template = "service_bookmarks/index"
 a.pageaction = false
 
 -- 创建选项卡容器
-tabs = a:section(NamedSection, "__tabs__", "", "")
+tabs = a:section(TypedSection, nil, "", "")
 tabs.template = "cbi/tabmenu"
+tabs.anonymous = true
 tabs.tabs = {
     { id = "home", header = translate("Home") },  -- 首页选项卡
     { id = "settings", header = translate("Settings") }  -- 设置选项卡
