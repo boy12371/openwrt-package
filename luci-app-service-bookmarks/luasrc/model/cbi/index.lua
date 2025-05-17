@@ -6,6 +6,7 @@ a.pageaction = false
 
 -- 创建选项卡容器
 tabs = a:section(TypedSection, "service", translate("Service Bookmarks"))
+tabs.template = "cbi/tblsection"
 tabs.anonymous = true
 tabs.addremove = true
 tabs:tab("home", translate("Home"))
