@@ -5,9 +5,9 @@ a.template = "service_bookmarks/index"
 a.pageaction = false
 
 -- 创建选项卡容器
-tabs = a:section(NamedSection, "service", "service_bookmarks")
+tabs = a:section(TypedSection, "service", translate("Service Bookmarks"))
 tabs.anonymous = true
-tabs.addremove = false
+tabs.addremove = true
 tabs:tab("home", translate("Home"))
 tabs:tab("settings", translate("Settings"))
 
