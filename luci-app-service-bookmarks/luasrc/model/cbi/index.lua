@@ -9,7 +9,7 @@ else
 	logdesp = "<font color=\"Red\">您还没有设置日志文件，或没有权限访问日志文件。</font>"
 end
 
-m = Map("syncy", translate("SyncY--百度网盘同步设置"), translate("<font color=\"Red\"><strong>修改配置文件前最好先停止程序，防止新修改的配置文件被程序中缓存的配置覆盖。<br/>配置文件被修改后也需要重新启动程序方可生效。</strong></font><br/>"))
+m = Map("service_bookmarks", translate("SyncY--百度网盘同步设置"), translate("<font color=\"Red\"><strong>修改配置文件前最好先停止程序，防止新修改的配置文件被程序中缓存的配置覆盖。<br/>配置文件被修改后也需要重新启动程序方可生效。</strong></font><br/>"))
 
 s = m:section(TypedSection, "syncy", translate("SyncY"))
 s.anonymous = true
