@@ -6,11 +6,11 @@ local i = "frp"
 local a, t, e
 local n = {}
 
-a = Map("frp")
+a = Map("service_bookmarks")
 a.title = translate("Frp Setting")
 a.description = translate("Frp is a fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.")
 
-a:section(SimpleSection).template  = "frp/frp_status"
+a:section(SimpleSection).template  = "service_bookmarks/frp_status"
 
 t = a:section(NamedSection, "common", "frp")
 t.anonymous = true
