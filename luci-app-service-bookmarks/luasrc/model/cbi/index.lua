@@ -1,7 +1,7 @@
 local _version = luci.sys.exec("/usr/bin/syncy.py version")
 local running=(luci.sys.call("kill -0 `cat /var/run/syncy.pid`") == 0)
-local cfgfile = nixio.fs.readfile("/etc/config/syncy")
-local logfile = cfgfile:match("option[ ]+syncylog[ ]+'([^']*)'")
+-- local cfgfile = nixio.fs.readfile("/etc/config/syncy")
+local logfile = ""
 local logdesp = ""
 if logfile and nixio.fs.access(logfile) then
 	logdesp = "只显示最后100行日志，更多日志请查看日志文件：%s。" % logfile
