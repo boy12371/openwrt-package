@@ -100,7 +100,8 @@ if nixio.fs.access("/tmp/syncy.bind") then
 	else
 		sybind = s:taboption("setting", Button, "sybind", translate("帐号绑定/重新绑定"))
 		sybind.inputstyle = "apply"
-		local binded = nixio.fs.readfile("/etc/config/syncy")
+		-- local binded = nixio.fs.readfile("/etc/config/syncy")
+		local binded = ""
 		binded = binded:match(".*option (device_code) '([0-9a-z]+)'.*")
 		if binded == "device_code" then
 			sybind.title = "重新绑定百度帐号"
@@ -112,7 +113,8 @@ if nixio.fs.access("/tmp/syncy.bind") then
 else
 	sybind = s:taboption("setting", Button, "sybind", translate("帐号绑定/重新绑定"))
 	sybind.inputstyle = "apply"
-	local binded = nixio.fs.readfile("/etc/config/syncy")
+	-- local binded = nixio.fs.readfile("/etc/config/syncy")
+	local binded = ""
 	binded = binded:match(".*option (device_code) '([0-9a-z]+)'.*")
 	if binded == "device_code" then
 		sybind.title = "重新绑定百度帐号"
@@ -127,7 +129,8 @@ sybind.write = function(self, section, value)
 	if self.option == "cpbind" then
 		self.option = "sybind"
 		self.inputstyle = "apply"
-		local binded = nixio.fs.readfile("/etc/config/syncy")
+		-- local binded = nixio.fs.readfile("/etc/config/syncy")
+		local binded = ""
 		binded = binded:match(".*option (device_code) '([0-9a-z]+)'.*")
 		if binded == "device_code" then
 			sybind.title = "重新绑定百度帐号"
