@@ -1,3 +1,6 @@
+local Tabs = require "luci.cbi.Tabs"
+local Tab = require "luci.cbi.Tab"
+
 -- 1. 创建主Map对象
 local map = Map("service_bookmarks", translate("Service Bookmarks"), translate("List all available service bookmarks here"))
 map.pageaction = true
