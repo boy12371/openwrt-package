@@ -1,18 +1,20 @@
-a = Map("service_bookmarks", translate("Service Bookmarks"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
+local a = Map("service_bookmarks", translate("Service Bookmarks"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
 a.template = "service_bookmarks/settings"
 
-t = a:section(TypedSection, "service", translate("Service Settings"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
+local t = a:section(TypedSection, "service", translate("Service Settings"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
 t.template = "cbi/tblsection"
-t.anonymous = true
 t.addremove = true
 
-e = t:option(Value, "title", translate("Service Title"))
+local e = t:option(Value, "title", translate("Service Title"))
+e.width = "15%"
 e.rmempty = true
 
 e = t:option(Value, "url", translate("Url Address"))
+e.width = "30%"
 e.rmempty = true
 
 e = t:option(Value, "description", translate("Description"))
+e.width = "45%"
 e.rmempty = false
 
 return a
