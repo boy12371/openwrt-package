@@ -1,8 +1,8 @@
-local a = Map("service_bookmarks", translate("Service Bookmarks"), translate("List all available service bookmarks here"))
+local a = Map("service_bookmarks", translate("Service Bookmarks"), "")
 a.template = "service_bookmarks/home"
 a.pageaction = false
 
-local t = a:section(TypedSection, "service", translate("Service Bookmarks"), translate("List all available service bookmarks here"))
+local t = a:section(TypedSection, "service", "", translate("List all available service bookmarks here"))
 t.template = "cbi/tblsection"
 t.anonymous = true
 

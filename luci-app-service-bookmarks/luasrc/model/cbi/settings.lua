@@ -1,7 +1,7 @@
-local a = Map("service_bookmarks", translate("Service Bookmarks"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
+local a = Map("service_bookmarks", translate("Service Bookmarks"), "")
 a.template = "service_bookmarks/settings"
 
-local t = a:section(TypedSection, "service", translate("Service Settings"), translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
+local t = a:section(TypedSection, "service", "", translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
 t.template = "cbi/tblsection"
 t.addremove = true
 

@@ -7,6 +7,6 @@ function index()
 	page.dependent = false
 	page.acl_depends = { "luci-app-service-bookmarks" }
 
-	-- entry({ "admin", "services", "service_bookmarks", "home" }, cbi("home"), _("Home"), 20).leaf = true
-	-- entry({ "admin", "services", "service_bookmarks", "settings" }, cbi("settings"), _("Settings"), 30).leaf = true
+	entry({ "admin", "services", "service_bookmarks", "home" }, cbi("home"), _("Home"), 20).leaf = true
+	entry({ "admin", "services", "service_bookmarks", "settings" }, cbi("settings"), _("Settings"), 30).leaf = true
 end
