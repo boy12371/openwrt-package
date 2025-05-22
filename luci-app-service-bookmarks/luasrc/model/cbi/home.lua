@@ -5,6 +5,7 @@ a.pageaction = false
 local t = a:section(TypedSection, "service", "", translate("List all available service bookmarks here"))
 t.template = "cbi/tblsection"
 t.anonymous = true
+t.addremove = false
 
 local e = t:option(DummyValue, "title", translate("Service Title"))
 e.default = ""

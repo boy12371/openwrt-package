@@ -3,6 +3,7 @@ a.template = "service_bookmarks/settings"
 
 local t = a:section(TypedSection, "service", "", translate("Set service bookmarks here, which can include any service elements like title, url, description..."))
 t.template = "cbi/tblsection"
+t.anonymous = true
 t.addremove = true
 
 local e = t:option(Value, "title", translate("Service Title"))
