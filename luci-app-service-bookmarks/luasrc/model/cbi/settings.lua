@@ -10,7 +10,7 @@ e.width = "15%"
 e.rmempty = true
 
 e = t:option(Value, "url", translate("Url Address"))
-e.width = "30%"
+e.width = "40%"
 e.rmempty = true
 
 e = t:option(Value, "description", translate("Description"))

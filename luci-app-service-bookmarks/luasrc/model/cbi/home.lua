@@ -13,7 +13,7 @@ e.rawhtml = false
 
 e = t:option(DummyValue, "url", translate("Url Address"))
 e.rawhtml = true
-e.width = "30%"
+e.width = "40%"
 function e.cfgvalue(self, section)
     local url = self.map:get(section, "url") or ""
     return string.format('<a href="%s" target="_blank">%s</a>', url, url)
