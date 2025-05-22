@@ -1,0 +1,4 @@
+
+config base 'ddns'
+    option enabled '0'
+    option 'cloudflare_sn' '0000-00000-00000-00000-0000'

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q batch <<-EOF >/dev/null
+	delete ucitrack.@ddns_cloudflare[-1]
+	add ucitrack ddns_cloudflare
+	set ucitrack.@ddns_cloudflare[-1].init=ddns_cloudflare
+	commit ucitrack
+EOF
+
+rm -f /tmp/luci-indexcache
+exit 0
