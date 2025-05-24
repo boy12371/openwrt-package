@@ -2,7 +2,7 @@ local a = Map("ddns_cloudflare", translate("DDNS Cloudflare"))
 a.template = "ddns_cloudflare/index"
 a.pageaction = false
 
-local t = m:section(NamedSection, "base", nil, "Facebook",
+local t = a:section(NamedSection, "base", nil, "Facebook",
               translate("You can register your own Facebook app and use its parameters here."))
 
 -- local t = a:section(TypedSection, "base", "", translate("List all available service bookmarks here"))
