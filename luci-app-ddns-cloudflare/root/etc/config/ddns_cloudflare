@@ -1,5 +1,7 @@
 
 config base 'ddns'
     option enabled '0'
-    option interval '100'
-    option 'cloudflare_sn' '0000-00000-00000-00000-0000'
+    option interval '10'
+    option api_key ''
+    option zone_name ''
+    option record_name ''

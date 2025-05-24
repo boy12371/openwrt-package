@@ -1,5 +1,42 @@
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8\n"
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
 
 msgid "DDNS Cloudflare"
-msgstr "动态域名"
+msgstr "Cloudflare动态域名"
+
+msgid "Cloudflare Settings"
+msgstr "Cloudflare设置"
+
+msgid "Configure your Cloudflare DDNS settings here"
+msgstr "在此配置Cloudflare动态域名设置"
+
+msgid "Enable"
+msgstr "启用"
+
+msgid "Enable Cloudflare DDNS service"
+msgstr "启用Cloudflare动态域名服务"
+
+msgid "Update Interval"
+msgstr "更新间隔"
+
+msgid "Time interval in minutes between updates"
+msgstr "两次更新之间的时间间隔(分钟)"
+
+msgid "API Key"
+msgstr "API密钥"
+
+msgid "Your Cloudflare Global API Key"
+msgstr "您的Cloudflare全局API密钥"
+
+msgid "Zone Name"
+msgstr "域名"
+
+msgid "The domain name to update (e.g. example.com)"
+msgstr "要更新的域名(例如example.com)"
+
+msgid "Record Name"
+msgstr "记录名称"
+
+msgid "DNS record to update (e.g. www)"
+msgstr "要更新的DNS记录(例如www)"
