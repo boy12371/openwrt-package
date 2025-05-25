@@ -26,7 +26,7 @@ e.datatype = "hostname"
 e:depends("enabled", "1")
 
 -- Add service control buttons
-local btns = t:option(SimpleSection, "_buttons", "")
+local btns = t:option(DummyValue, "_buttons")
 btns.template = "ddns_cloudflare/buttons"
 btns:depends("enabled", "1")
 
