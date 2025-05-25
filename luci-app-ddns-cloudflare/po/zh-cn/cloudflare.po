@@ -2,6 +2,27 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
+msgid "Service Control"
+msgstr "服务控制"
+
+msgid "Start"
+msgstr "启动"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Restart"
+msgstr "重启"
+
+msgid "Service started successfully"
+msgstr "服务启动成功"
+
+msgid "Service stopped successfully"
+msgstr "服务停止成功"
+
+msgid "Service restarted successfully"
+msgstr "服务重启成功"
+
 msgid "DDNS Cloudflare"
 msgstr "动态域名解析"
 

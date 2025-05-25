@@ -25,4 +25,26 @@ e = t:option(Value, "record_name", translate("Record Name"), translate("The DNS 
 e.datatype = "hostname"
 e:depends("enabled", "1")
 
+-- Add service control buttons
+local btns = t:option(SimpleSection, "_buttons", "")
+btns.template = "ddns_cloudflare/buttons"
+btns:depends("enabled", "1")
+
+function a.handle(self, state, data)
+    if state == FORM_VALID then
+        local cmd = luci.http.formvalue("cbi.apply")
+        if cmd == "start" then
+            os.execute("/etc/init.d/ddns_cloudflare start >/dev/null 2>&1")
+            a.message = translate("Service started successfully")
+        elseif cmd == "stop" then
+            os.execute("/etc/init.d/ddns_cloudflare stop >/dev/null 2>&1")
+            a.message = translate("Service stopped successfully")
+        elseif cmd == "restart" then
+            os.execute("/etc/init.d/ddns_cloudflare restart >/dev/null 2>&1")
+            a.message = translate("Service restarted successfully")
+        end
+    end
+    return a
+end
+
 return a

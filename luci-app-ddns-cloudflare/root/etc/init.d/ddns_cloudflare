@@ -1,11 +1,49 @@
 #!/bin/sh /etc/rc.common
 
 START=99
+STOP=10
+USE_PROCD=1
 
-start()
-{
-	stop
+. /lib/functions.sh
+. /etc/config/ddns_cloudflare
+
+RUN_PID="/var/run/ddns_cloudflare.pid"
+
+start_service() {
+    procd_open_instance
+    procd_set_param command "$0" run
+    procd_set_param pidfile "$RUN_PID"
+    procd_set_param respawn
+    procd_close_instance
+    logger -t ddns-cloudflare "Service started"
 }
 
-stop()
-{}
+stop_service() {
+    [ -f "$RUN_PID" ] && {
+        kill $(cat "$RUN_PID") >/dev/null 2>&1
+        rm -f "$RUN_PID"
+    }
+    logger -t ddns-cloudflare "Service stopped"
+}
+
+restart() {
+    stop
+    sleep 1
+    start
+}
+
+status() {
+    [ -f "$RUN_PID" ] && {
+        echo "Service is running (pid $(cat "$RUN_PID"))"
+        return 0
+    }
+    echo "Service is not running"
+    return 1
+}
+
+run() {
+    while sleep $(uci get ddns_cloudflare.@service[0].interval 2>/dev/null || echo 300); do
+        # Implement actual DDNS update logic here
+        logger -t ddns-cloudflare "Running DDNS update"
+    done
+}
