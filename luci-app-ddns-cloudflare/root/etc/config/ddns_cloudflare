@@ -1,20 +1,8 @@
-# DDNS Cloudflare 配置
-config ddns 'cloudflare'
-    # 启用服务 (0/1)
+
+config base 'ddns'
     option enabled '0'
-    
-    # 检查间隔(分钟)
     option interval '10'
-    
-    # Cloudflare API Token
-    # 所需权限: Zone.Zone:Read, Zone.DNS:Edit
     option api_token ''
-    
-    # 域名 (如 example.com)
     option zone ''
-    
-    # DNS记录名称 (如 www)
     option record ''
-    
-    # 日志级别 (0=error, 1=warning, 2=notice, 3=info, 4=debug)
     option log_level '2'
