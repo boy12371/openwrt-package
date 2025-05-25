@@ -1,8 +1,9 @@
-local a = Map("ddns_cloudflare", translate("DDNS Cloudflare Configuration"))
+local a = Map("ddns_cloudflare", translate("DDNS Cloudflare"))
 a.template = "ddns_cloudflare/index"
 
-local t = a:section(NamedSection, "base", "ddns", translate("Cloudflare Settings"))
+local t = a:section(NamedSection, "ddns", "base", translate("Cloudflare Settings"))
 t.anonymous = true
+t.addremove = true
 
 local e = t:option(Flag, "enabled", translate("Enable"), translate("Enable Cloudflare DDNS service"))
 e.default = "0"
