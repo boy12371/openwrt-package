@@ -2,7 +2,7 @@ local a = Map("ddns_cloudflare", translate("DDNS Cloudflare"))
 a.template = "ddns_cloudflare/index"
 a.pageaction = false
 
-local t = a:section(NamedSection, "base", nil, "Cloudflare Settings",
+local t = a:section(NamedSection, "base", "ddns", "Cloudflare Settings",
               translate("Configure your Cloudflare DDNS settings here"))
 
 -- local t = a:section(TypedSection, "base", "", translate("List all available service bookmarks here"))
