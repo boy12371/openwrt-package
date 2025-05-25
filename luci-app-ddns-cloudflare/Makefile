@@ -4,7 +4,8 @@
 #
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=LuCI Support for ddns-cloudflare
+LUCI_TITLE:=LuCI Support for Cloudflare Dynamic DNS
+LUCI_DESCRIPTION:=Web interface for Cloudflare Dynamic DNS service
 LUCI_DEPENDS:=
 LUCI_PKGARCH:=all
 
