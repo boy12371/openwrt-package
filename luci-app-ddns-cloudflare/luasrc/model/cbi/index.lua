@@ -13,7 +13,7 @@ e.datatype = "uinteger"
 e.default = "10"
 e:depends("enabled", "1")
 
-e = t:option(Value, "api_token", translate("API Key"), translate("Cloudflare API Token"))
+e = t:option(Value, "api_token", translate("API Token"), translate("Cloudflare API Token"))
 e.password = true
 e:depends("enabled", "1")
 
