@@ -26,8 +26,15 @@ e.datatype = "hostname"
 e:depends("enabled", "1")
 
 -- Add service control buttons
-local btns = t:option(DummyValue, "_buttons")
+local n = a:section(TypedSection, "base", translate("Service Control"))
+n.template = "cbi/tblsection"
+n.anonymous = true
+n.addremove = false
+
+local btns = n:option(DummyValue, "_buttons")
 btns.template = "ddns_cloudflare/buttons"
+btns.width = "100%"
+btns.rawhtml = false
 btns:depends("enabled", "1")
 
 function a.handle(self, state, data)
