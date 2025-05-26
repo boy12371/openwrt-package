@@ -1,5 +1,6 @@
 local a = Map("ddns_cloudflare", translate("DDNS Cloudflare"))
 a.template = "ddns_cloudflare/index"
+a.pageaction = false
 
 local t = a:section(NamedSection, "ddns", "base", translate("Cloudflare Settings"))
 t.anonymous = true
