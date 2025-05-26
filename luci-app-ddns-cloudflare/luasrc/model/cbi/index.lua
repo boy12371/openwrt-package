@@ -27,7 +27,7 @@ e.datatype = "hostname"
 e:depends("enabled", "1")
 
 -- Add service control buttons
-local n = a:section(TypedSection, "base", translate("Service Control"))
+local n = a:section(TypedSection, "ddns", "base", translate("Service Control"))
 n.template = "cbi/tblsection"
 n.anonymous = true
 n.addremove = false
