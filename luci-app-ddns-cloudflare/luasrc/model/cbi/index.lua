@@ -33,10 +33,10 @@ n.anonymous = true
 n.addremove = false
 
 local btns = n:option(DummyValue, "_buttons")
-btns.template = "ddns_cloudflare/buttons"
-btns.width = "100%"
-btns.rawhtml = false
 btns:depends("enabled", "1")
+btns.width = "100%"
+btns.rawhtml = true
+btns.template = "ddns_cloudflare/buttons"
 
 function a.handle(self, state, data)
     if state == FORM_VALID then
