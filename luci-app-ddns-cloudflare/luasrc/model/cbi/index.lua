@@ -4,7 +4,7 @@ a.pageaction = false
 
 local t = a:section(NamedSection, "ddns", "base", translate("Cloudflare Settings"))
 t.anonymous = true
-t.addremove = true
+t.addremove = false
 
 local e = t:option(Flag, "enabled", translate("Enable"), translate("Enable Cloudflare DDNS service"))
 e.default = "0"
